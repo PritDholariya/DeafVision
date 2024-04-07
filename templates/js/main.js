@@ -196,3 +196,27 @@ const start = async() => {
 window.onload = () => {
     start();
 };
+
+function uploadImage() {
+    var input = document.getElementById('imageInput');
+    var output = document.getElementById('output');
+    
+    if (!input.files || !input.files[0]) {
+        output.innerHTML = 'No file selected.';
+        return;
+    }
+    
+    var file = input.files[0];
+    var formData = new FormData();
+    formData.append('image', file);
+    var imagePath = URL.createObjectURL(file);
+    console.log(imagePath)
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'http://127.0.0.1:5000/process_image', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            output.innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send(formData);
+};

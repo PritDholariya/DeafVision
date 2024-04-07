@@ -1,48 +1,108 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Silent Signal</title>
-    
-        <script src="https://kit.fontawesome.com/a658a7b479.js" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/@tensorflow/tfjs"></script>
-        <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
-        <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
-        <script src="https://kit.fontawesome.com/a658a7b479.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
-    
-        <link rel="icon" type="image/png" href="../docs/logo.png">
-        <link rel="stylesheet" type="text/css" href="../static/mystyle.css">
-        <script src="./js/main.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silent Signal</title>
 
-    </head>
-    <body>
+    <script
+      src="https://kit.fontawesome.com/a658a7b479.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+    <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+    <script
+      src="https://kit.fontawesome.com/a658a7b479.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.js"
+      integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+      crossorigin="anonymous"
+    ></script>
 
-        <nav class="navbar">
-            <span class="navbar-toggle" id="js-navbar-toggle">
-                <button class="togglebtn" onClick={this.buttonclicked}> <i class="fas fa-bars"></i></button>
-            </span>
-            <h5><a href="../index.html" class="logo">NO <span>Silence</span></a></h5>
-            <ul class="main-nav" id="js-menu">
-                <li>
-                    <a href="../index.html" class="nav-links">Let's Learn The Sign Language</a>
-                </li>
-                <li>
-                    <a href="./Training.html" class="nav-links">Make Your Own Language</a>
-                </li>
-                <li>
-                    <a href="templates/detection.html" class="nav-links orange">Image Description</a>
-                </li>   
-            <!--
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      #output {
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .container {
+        flex: display,
+        justify-content: center,
+        align-item: center,
+        height: 1vh
+      }
+
+      #fileName {
+        display: none;
+        margin-left: 10px;
+      }
+    </style>
+    <link rel="icon" type="image/png" href="../docs/logo.png" />
+    <link rel="stylesheet" type="text/css" href="../static/mystyle.css" />
+    <script src="./js/main.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <span class="navbar-toggle" id="js-navbar-toggle">
+        <button class="togglebtn" onClick="{this.buttonclicked}">
+          <i class="fas fa-bars"></i>
+        </button>
+      </span>
+      <h5>
+        <a href="../index.html" class="logo">NO <span>Silence</span></a>
+      </h5>
+      <ul class="main-nav" id="js-menu">
+        <li>
+          <a href="../index.html" class="nav-links"
+            >Let's Learn The Sign Language</a
+          >
+        </li>
+        <li>
+          <a href="./Training.html" class="nav-links">Make Your Own Language</a>
+        </li>
+        <li>
+          <a href="templates/detection.html" class="nav-links orange"
+            >Image Description</a
+          >
+        </li>
+        
                 <li>
                     <a href="./About.html" class="nav-links">About</a>
                 </li>
-            -->
-            </ul>
-        </nav>        
-        hii dear i love you
-        <script src="" async defer></script>
-    </body>
+            
+      </ul>
+    </nav>
+    
+    <div class="container">
+        <h2>Upload an Image</h2>
+        <input type="file" id="imageInput" accept="image/*" />
+        <button onclick="uploadImage()">Upload</button>
+        <div id="output"></div>
+    </div>
+
+
+
+    <script src="" async defer></script>
+  </body>
 </html>
